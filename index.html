@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+</head>
+
+<body>
+    <h1> The News App</h1>
+    <div id="summary"></div>
+    <div id="news"></div>
+</body>
+<script>
+        var xhr = new XMLHttpRequest();
+        xhr.open(
+            "GET",
+            "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/politics/blog/2014/feb/17/alex-salmond-speech-first-minister-scottish-independence-eu-currency-live?show-fields=body",
+            true
+        );
+        xhr.send();
+        xhr.addEventListener("readystatechange", processRequest, false);
+        function processRequest(e) {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var responseJson = JSON.parse(xhr.responseText);
+                console.log(responseJson);
+                document.getElementById("news").innerHTML = responseJson.response.content.fields.body;
+            }
+        }
+</script>
+
+</html>

@@ -2,7 +2,7 @@
   "name": "newsapp",
   "version": "1.0.0",
   "description": "News App for politicians",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/apsaxena24/News-App/issues"
   },
-  "homepage": "https://github.com/apsaxena24/News-App#readme"
+  "homepage": "https://github.com/apsaxena24/News-App#readme",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "start": "^4.0.1"
+  }
 }
