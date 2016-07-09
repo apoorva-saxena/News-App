@@ -9,7 +9,7 @@
     <div id="summary"></div>
     <div id="news"></div>
 </body>
-<script>
+<!-- <script>
         var xhr = new XMLHttpRequest();
         xhr.open(
             "GET",
@@ -29,9 +29,39 @@
                 news.appendChild(button);
             }
         }
-</script>
+</script> -->
 
 <script>
+  var xhr = new XMLHttpRequest();
+  xhr.open(
+    "GET",
+    "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=headline/",
+    true
+  );
+  xhr.send();
+  console.log(xhr.status);
+  xhr.addEventListener("readystatechange", processRequest, false);
+  function processRequest() {
+    if(xhr.readyState == 4 && xhr.status == 200) {
+      var responseJson = JSON.parse(xhr.response);
+      var newsResults = responseJson.response.results;
+      console.log(newsResults);
+      for (var i = 0; i < newsResults.length; i++)
+      {
+        var divNews = document.getElementById("news")
+        var pNews = document.createElement("p");
+        var eachNews = newsResults[i].webTitle;
+        console.log(eachNews);
+        pNews.innerHTML = eachNews;
+        var button = document.createElement("BUTTON");
+        var t = document.createTextNode("Show Summary");
+        button.appendChild(t);
+        pNews.appendChild(button);
+        divNews.appendChild(pNews);
+
+      }
+    }
+  }
 </script>
 
 </html>
