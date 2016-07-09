@@ -21,10 +21,17 @@
         function processRequest(e) {
             if (xhr.readyState == 4 && xhr.status == 200) {
                 var responseJson = JSON.parse(xhr.responseText);
-                console.log(responseJson);
                 document.getElementById("news").innerHTML = responseJson.response.content.fields.body;
+                var news = document.getElementById("news")
+                var button = document.createElement("BUTTON");
+                var t = document.createTextNode("Show Summary")
+                button.appendChild(t)
+                news.appendChild(button);
             }
         }
+</script>
+
+<script>
 </script>
 
 </html>
