@@ -31,6 +31,7 @@ var xhr = new XMLHttpRequest();
           var responseJson = JSON.parse(xhr.response);
           var newsResults = responseJson.response.results;
           for (var i = 0; i < newsResults.length; i++) {
+            (function() {
               var divNews = document.getElementById("news");
               var pNews = document.createElement("p");
               var eachNews = newsResults[i].webTitle;
@@ -48,6 +49,7 @@ var xhr = new XMLHttpRequest();
               button.appendChild(t);
               pNews.appendChild(button);
               divNews.appendChild(pNews);
+            }());
           }
       }
   }

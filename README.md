@@ -1,20 +1,7 @@
 # News Summary Project
 
-For this week's project, you'll create an app that summarises the news.  Your app will grab all the headlines from the Guardian newspaper API and display them on a page.  Clicking on a headline will show a summary of the article.
+My Solution to News Summary app
 
-You'll write all of your logic in JavaScript.  You'll use Angular as your MVC framework.  You'll build a "serverless" architecture: you'll serve your HTML, CSS and JavaScript files, and APIs to get data from the Guardian and summarise text.
-
-You'll deploy your project to Heroku.
-
-We'll present these projects on Monday.
-
-## Starter app
-
-You'll begin with a [starter app](https://github.com/makersacademy/news-summary).  This is so that:
-
-* You don't have to worry about setup, because the repo already has a working Angular app, and a passing Protractor feature test and Karma unit test.
-
-* You can practice the skill of contributing to an existing app.
 
 ## User Stories
 
@@ -38,25 +25,6 @@ I can read a full news article
 So that I can get an in depth understanding of a very important story
 ```
 
-```
-As a busy politician
-I can see a picture to illustrate each news article when I browse headlines
-So that I have something nice to look at
-```
-
-```
-As a busy politician
-I can read the site comfortably on my phone
-Just in case my laptop breaks
-```
-
-```
-As a busy politician
-I can see whizzy animations in the app
-To make my news reading more fun
-```
-
-## Mockups
 
 ### Headlines page
 
