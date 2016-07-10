@@ -1,7 +1,10 @@
+NEWS_URL = "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=headline/";
+SUMMARY_URL = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=";
+
 var xhr = new XMLHttpRequest();
   xhr.open(
       "GET",
-      "http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=headline/",
+      NEWS_URL,
       true
   );
   xhr.send();
@@ -9,7 +12,7 @@ var xhr = new XMLHttpRequest();
 
   function generateSummary(eachUrl) {
     console.log(eachUrl);
-      var apiUrl = "http://news-summary-api.herokuapp.com/aylien?apiRequestUrl=https://api.aylien.com/api/v1/summarize?url=" + eachUrl;
+      var apiUrl = SUMMARY_URL + eachUrl;
 
       var xhr = new XMLHttpRequest();
       xhr.open(
@@ -37,7 +40,7 @@ var xhr = new XMLHttpRequest();
               button = document.createElement("BUTTON");
               button.setAttribute("id", i);
               button.addEventListener("click", function() {
-                  generateSummary(i);
+                  generateSummary(eachUrl);
               },
               false
             );
